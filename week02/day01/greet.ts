@@ -7,7 +7,7 @@
 // -  Greet `name`
 
 let name2: string = 'Greenfox';
-function greet(greeting?: string) {
+function greet(greeting?: string): string {
     if (name2) {
         return 'Greetings, dear ' + greeting;
     } else {
@@ -17,9 +17,10 @@ function greet(greeting?: string) {
 
 console.log(greet(name2));
 
+//OTHER WAY
 
 let name3: string = 'Greenfox';
-function greet1(greeting?: string) {
+function greet1(greeting?: string): string {
     let welcomeString: string = 'Greetings, dear ';
     if (greeting) {
         welcomeString += greeting;
