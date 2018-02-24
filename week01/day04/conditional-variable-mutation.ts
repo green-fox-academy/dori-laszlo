@@ -20,7 +20,6 @@ if (b > 10 && b < 20) {
     out2 = 'More!';
 }
 
-
 // if b is between 10 and 20 set out2 to "Sweet!"
 // if less than 10 set out2 to "Less!",
 // if more than 20 set out2 to "More!"
@@ -54,7 +53,6 @@ if ((d % 4) === 0 && time <= 200) {
 } else {
     out3 = 'Run Forest Run!';
 }
-
 
 // if d is dividable by 4
 // and time is not more than 200
