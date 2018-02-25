@@ -33,7 +33,6 @@ function listAge(list: any[]): any {
     }
     })
     return ageSum;
-
 }
 
 console.log(listAge(students));
