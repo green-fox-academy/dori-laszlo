@@ -14,5 +14,3 @@ function appenda (animals: string[]) {
 }
 
 appenda(nimals);
-
-
