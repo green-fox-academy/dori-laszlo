@@ -9,7 +9,7 @@
 
 let re = /dishwasher/gi;
 let example: string = 'In a dishwasher far far away';
-let replacedExample = example.replace(/dishwasher/gi, "galaxy");
+let replacedExample = example.replace(/dishwasher/gi, 'galaxy');
 console.log(replacedExample);
 
 
