@@ -21,14 +21,18 @@ class Sharpie {
     use(use: number) {
         if ((this.inkAmount > 0) && (this.inkAmount - use) >= 0) {
             this.inkAmount -= use;
+            console.log(`Written: ${use} units. Ink left: ${this.inkAmount} units`);
+            return this.inkAmount;
+        } else if (this.inkAmount - use < 0) {
+            console.log(`Written: ${this.inkAmount} units. Ink has run out, ${use - this.inkAmount} units left unwritten!`);
+            return this.inkAmount = 0; 
         } else {
-            console.log('Do not have enough ink to write this much!');
+            console.log('Ink has run out!');
         }
     }
 }
 
 let sharpie01 = new Sharpie('blue', 1.4);
-sharpie01.use(80);
-console.log(sharpie01.inkAmount);
-sharpie01.use(22);
-
+sharpie01.use(70);
+sharpie01.use(1);
+sharpie01.use(34);
