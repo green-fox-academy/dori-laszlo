@@ -27,7 +27,6 @@ function greet1(greeting?: string): string {
     } else {
         welcomeString += '\'name\'';
     }
-
     return welcomeString;
 }
 

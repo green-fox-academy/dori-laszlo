@@ -31,3 +31,5 @@ for (let key in notSoCrypticMessage) {
   console.log(out);
 
 //   console.log(key + hashmap[key]);
+
+for(let notSoCrypticMessage in key)

@@ -11,3 +11,12 @@ console.log(ticTacResult('win-x.txt'))
 console.log(ticTacResult('draw.txt'))
 // should print draw
 
+const fs = require('fs');
+
+function ticTacResult(fileName: string) {
+    fs.readFileSync(fileName, 'utf-8');
+    if (fileName === O) {
+    return console.log(0); 
+    }
+
+}

@@ -17,4 +17,3 @@ copy('paste.txt', 'copy.txt');
 } catch(err) {
     console.log(false);
 }
-

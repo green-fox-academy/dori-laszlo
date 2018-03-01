@@ -4,7 +4,6 @@
 //    which logs to the console the input parameters
 //    (can have multiple number of arguments)
 
-
 let Numbers: any[] = [1, 'hello', false, 2,3,4,5];
 function printer(logToConsole: any[]) {
     let valami: string = '';
@@ -26,5 +25,3 @@ function fruits(printOut: string[]) {
 }
 
 fruits(Strings);
-
-

@@ -59,10 +59,3 @@ myDice.getCurrent();
 // console.log("------------------");
 // myDice.reroll(4);
 // myDice.getCurrent();
-
-
-// do {
-//     myDice.roll();
-//     myDice.reroll();
-// } while (myDice.getCurrent(1) = 6);
-

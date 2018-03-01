@@ -13,5 +13,3 @@ try {
 } catch(err) {
     console.log('unable to read the file');
 }
-
-

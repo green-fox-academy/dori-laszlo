@@ -25,6 +25,3 @@ fileWrite('write-me.txt', word, number);
 } catch(err) {
         console.log('Unable to write file: write-me.txt');
     }
-
-
-

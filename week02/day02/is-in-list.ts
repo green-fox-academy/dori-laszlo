@@ -5,5 +5,4 @@
 let listOfNumbers: number[] = [2, 4, 6, 8, 10, 12, 14, 16];
 console.log(checkNums(listOfNumbers));
 
-export = checkNums;
-
+//export = checkNums;
