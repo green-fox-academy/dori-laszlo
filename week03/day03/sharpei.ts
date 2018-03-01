@@ -27,7 +27,8 @@ class Sharpie {
     }
 }
 
-let sharpie01: Sharpie = new Sharpie('blue', 1.4);
+let sharpie01 = new Sharpie('blue', 1.4);
 sharpie01.use(80);
 console.log(sharpie01.inkAmount);
 sharpie01.use(22);
+
