@@ -34,5 +34,5 @@ class Sharpie {
 
 let sharpie01 = new Sharpie('blue', 1.4);
 sharpie01.use(70);
-sharpie01.use(1);
 sharpie01.use(34);
+sharpie01.use(2);
