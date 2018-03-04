@@ -16,20 +16,16 @@ let hashmap = {
   3: 'say goodbye '
 };
 
-// for(let i: number = 0; i < notSoCrypticMessage.length; i++) {
-//     if(notSoCrypticMessage[i] === hashmap[i]) {
-//         out += hashmap[i].value;
-//     }
-// }
+for (let i: number = 0; i < notSoCrypticMessage.length; i++) {
+  let position: number = notSoCrypticMessage[i];
+  out += hashmap[position];
+};
 
-// console.log(out)
- 
-for (let key in notSoCrypticMessage) {
-    out = key + hashmap[key];
-  }
 
+  // function print(dominoes: Domino[]) {
+  //   dominoes.forEach(function (value) {
+  //       console.log(value);
+  //   });
+  // }
+  // out.push(hashmap[1]);
   console.log(out);
-
-//   console.log(key + hashmap[key]);
-
-for(let notSoCrypticMessage in key)
