@@ -14,11 +14,13 @@ class Student {
         this.learnt = 0;
     }
 
-    learn() {
-        return this.learnt += 1;
+    learn(teach: number): number {
+        this.learnt += teach;
+        console.log('I\'ve learnt: ' + this.learnt);
+        return this.learnt;
     }
 
-    question(teacher) {
+    question() {
         let question = new Teacher();
         question.answer();
     }
@@ -30,20 +32,18 @@ class Teacher {
         this.knowledge = knowledge
     }
 
-    teach() {
+    teach(teach: number) {
         let learn = new Student();
-        learn.learn();
+        learn.learn(teach);
     }
 
     answer() {
         let learn = new Student();
-        learn.learn();
+        learn.learn(1);
     }
 }
 
 let student01 = new Student();
 let teacher01 = new Teacher();
-teacher01.teach();
-//student01.learn();
-console.log(student01);
-// console.log(teacher01);
+teacher01.teach(3);
+student01.question();
