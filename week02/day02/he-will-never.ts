@@ -17,15 +17,8 @@ let hashmap = {
 };
 
 for (let i: number = 0; i < notSoCrypticMessage.length; i++) {
-  let position: number = notSoCrypticMessage[i];
-  out += hashmap[position];
+  let mark: number = notSoCrypticMessage[i];
+  out += hashmap[mark];
 };
 
-
-  // function print(dominoes: Domino[]) {
-  //   dominoes.forEach(function (value) {
-  //       console.log(value);
-  //   });
-  // }
-  // out.push(hashmap[1]);
-  console.log(out);
+console.log(out);
