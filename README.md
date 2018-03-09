@@ -1,2 +1,3 @@
 # dori-laszlo
-Student @ Green Fox Academy
+
+https://github.com/dori-laszlo/todo-app
