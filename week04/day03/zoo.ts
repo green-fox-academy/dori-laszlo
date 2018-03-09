@@ -36,9 +36,9 @@ class Mammal extends Animal {
 
     breed(): string {
         if (this.age > 2) {
-            return `Having a new miniature ${this.species}.`
+            return `having a new miniature ${this.species}.`
         } else {
-            return;
+            return `none, because this ${this.species} is too young to breed.`;
         }
     }
 }
@@ -47,9 +47,9 @@ class Reptile extends Animal {
 
     breed(): string {
         if (this.age > 3) {
-            return `Having a new ${this.species} egg.`;
+            return `laying a new ${this.species} egg.`;
         } else {
-            return;
+            return `none, because this ${this.species} is too young to breed.`;
         }
 
     }
@@ -59,16 +59,16 @@ class Bird extends Animal {
 
     breed(): string {
         if (this.age > 1) {
-            return `Having a new ${this.species} egg.`;
+            return `laying a new ${this.species} egg.`;
         } else {
-            return;
+            return `none, because this ${this.species} is too young to breed.`;
         }
     }
 }
 
 let reptile = new Reptile('Croc', 'Crocodile', 'male');
 let mammal = new Mammal('Lajos', 'Koala', 'male');
-let bird = new Bird('Csori', 'Parrot', 'female');
+let bird = new Bird('Csorike', 'Parrot', 'female');
 
 console.log("How do you breed?");
 console.log("A " + reptile.getName() + " is breeding by " + reptile.breed());
