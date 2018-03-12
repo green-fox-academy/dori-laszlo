@@ -66,7 +66,7 @@ class Bird extends Animal {
     }
 }
 
-let reptile = new Reptile('Croc', 'Crocodile', 'male');
+let reptile = new Reptile('Karoly', 'Crocodile', 'male');
 let mammal = new Mammal('Lajos', 'Koala', 'male');
 let bird = new Bird('Csorike', 'Parrot', 'female');
 
