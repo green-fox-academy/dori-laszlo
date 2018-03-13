@@ -55,7 +55,16 @@ class Reptile extends Animal {
     }
 }
 
-class Bird extends Animal {
+import { Flyable } from './flyable';
+
+export class Bird extends Animal implements Flyable {
+    distance: number;
+    speed: number;
+    constructor(name, species, gender, distance?: number, speed?: number, tiredness?, hunger?, age?) {
+        super(name, species, gender, tiredness, hunger, age)
+        this.distance = 0;
+        this.speed = 0;
+    }
 
     breed(): string {
         if (this.age > 1) {
@@ -64,6 +73,24 @@ class Bird extends Animal {
             return `none, because this ${this.species} is too young to breed.`;
         }
     }
+
+    land() {
+        this.speed = 0;
+        return 'Yeeey, a tree! Let\'s land!';
+    };
+
+    fly(distance, speed) {
+        let flight = [];
+        this.distance += distance;
+        flight.push(this.distance);
+        this.speed += speed;
+        flight.push(this.speed);
+        return flight;
+    };
+
+    takeOff() {
+        return 'Let\'s go!';
+    };
 }
 
 let reptile = new Reptile('Karoly', 'Crocodile', 'male');
