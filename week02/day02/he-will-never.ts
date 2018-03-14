@@ -16,9 +16,8 @@ let hashmap = {
   3: 'say goodbye '
 };
 
-for (let i: number = 0; i < notSoCrypticMessage.length; i++) {
-  let mark: number = notSoCrypticMessage[i];
-  out += hashmap[mark];
-};
+const decodeMessage = () => notSoCrypticMessage.map(i => hashmap[i]).join(' ');
+
+out = decodeMessage();
 
 console.log(out);
