@@ -23,24 +23,22 @@ const queue: any[] = [
 
 function securityCheck(queue: any[]) {
     let canEnter: string[] = [];
-    let watchlist: string[] = [];
-    let security_alchol_loot: number = 0;
     queue.map(function (persons) {
         if (persons.alcohol === 0 && persons.guns === 0) {
             canEnter.push(persons);
         } if (persons.guns > 0) {
             watchlist.push(persons.name);
-            return console.log(watchlist);
         } if (persons.alcohol > 0 && persons.guns === 0) {
-            security_alchol_loot += persons.alcohol;
+            securityAlcoholLoot += persons.alcohol;
             persons.alcohol = 0;
-            canEnter.push(persons);
-            return console.log(security_alchol_loot);
+            canEnter.push(persons);;
         }
     })
     return canEnter;
 };
 
 console.log(securityCheck(queue));
+console.log(watchlist);
+console.log(securityAlcoholLoot);
 
 export = securityCheck;
