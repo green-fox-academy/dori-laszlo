@@ -5,12 +5,13 @@
 // Example
 
 function subint(number: number, numList: number[]) {
-    let index = numList.indexOf(number);
-    return index;
+    let stringList = numList.toString();
+    let stringN = number.toString();
+    return console.log(stringList.indexOf(stringN));
 };
 
+// Example
 console.log(subint(1, [1, 11, 34, 52, 61]));
 // should print: `[0, 1, 4]`
 console.log(subint(9, [1, 11, 34, 52, 61]));
 // should print: '[]'
-
