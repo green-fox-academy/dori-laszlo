@@ -53,12 +53,16 @@ class Farm {
     };
 
     breed() {
-        if (this.animals.length > 1 && this.animals.length < this.maxCapacity) {
-            this.animals.push(new Animal);
-        } if (this.animals.length === this.maxCapacity) {
-            console.log('You have reached your farm\'s maximum capacity.');
-        } if (this.animals.length < 2) {
-            console.log(`You need at least 2 animals in your farm to breed. Now You have: ${this.animals.length}.`);
+        let randomNumber = (Math.floor(Math.random() * Math.floor(4)));
+        for (let i: number = 1; i <= randomNumber; i++) {
+            if (this.animals.length > 1 && this.animals.length < this.maxCapacity) {
+                this.animals.push(new Animal);
+                return this.animals;
+            } if (this.animals.length === this.maxCapacity) {
+                return console.log('You have reached your farm\'s maximum capacity.');
+            } if (this.animals.length < 2) {
+                return console.log(`You need at least 2 animals in your farm to breed. Now You have: ${this.animals.length}.`);
+            }
         }
     };
 
@@ -73,10 +77,10 @@ class Farm {
 
 let farm = new Farm();
 farm.buyAnimal(new Animal(20, 60));
-farm.buyAnimal(new Animal(70, 30));
-farm.buyAnimal(new Animal(40, 22));
+farm.buyAnimal(new Animal(20, 60));
+farm.breed();
+farm.breed();
+farm.breed();
+farm.breed();
 farm.slaughter();
 farm.getAnimals();
-
-
-//console.log(farm);
