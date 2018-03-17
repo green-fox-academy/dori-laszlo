@@ -7,13 +7,13 @@
 
 const fs = require('fs');
 
-function ticTacResult(filename: string) {
-    let read = fs.readFileSync(filename, 'utf-8');
-    if (read === 'x') {
-        return 'X';
-    } if (read === 'o') {
+function ticTacResult(filename: string): string {
+    let game = fs.readFileSync(filename, 'utf-8').split('');
+    if ((game[0] === 'O' && game[1] === 'O' && game[2] === 'O') || (game[0] === 'O' && game[5] === 'O' && game[10] === 'O') || (game[0] === 'O' && game[4] === 'O' && game[8] === 'O') || (game[1] === 'O' && game[5] === 'O' && game[9] === 'O') || (game[2] === 'O' && game[5] === 'O' && game[8] === 'O') || (game[2] === 'O' && game[6] === 'O' && game[9] === 'O') || (game[4] === 'O' && game[5] === 'O' && game[6] === 'O') || (game[8] === 'O' && game[9] === 'O' && game[10] === 'O')) {
         return 'O';
-    } if (read === 'draw') {
+    } if ((game[0] === 'X' && game[1] === 'X' && game[2] === 'X') || (game[0] === 'X' && game[5] === 'X' && game[10] === 'X') || (game[0] === 'X' && game[4] === 'X' && game[8] === 'X') || (game[1] === 'X' && game[5] === 'X' && game[9] === 'X') || (game[2] === 'X' && game[5] === 'X' && game[8] === 'X') || (game[2] === 'X' && game[6] === 'X' && game[9] === 'X') || (game[4] === 'X' && game[5] === 'X' && game[6] === 'X') || (game[8] === 'X' && game[9] === 'X' && game[10] === 'X')) {
+        return 'X';
+    } else {
         return 'draw';
     }
 };
