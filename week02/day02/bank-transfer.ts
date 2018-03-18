@@ -30,22 +30,30 @@ function getNameAndBalance(accountList: any[], clientNumber: number): string[] {
     return getAccount;
 };
 
-function transferAmount(accountList: any[], from: number, to: number, cash: number): any {
-    accounts.forEach(function (person) {
-        if (person.account_number === from) {
-            accountList[1].balance -= cash;
-            accountList[2].balance += cash;
-        } else {
-            console.log("404 - account not found");
+function transferAmount(accountList: any[], from: number, to: number, cash: number) {
+    let validAccounts: number = 0;
+    for (let i: number = 0; i < accountList.length; i++) {
+        if (accountList[i].clientNumber === from || accountList[i].clientNumber === to) {
+            validAccounts++;
         }
-    })
-    return accountList;
+        for (let i: number = 0; i < accountList.length; i++) {
+            if (validAccounts === 2 && accountList[i].clientNumber === from) {
+                return accountList[i].balance -= cash;
+            } if (validAccounts === 2 && accountList[i].clientNumber === to) {
+                return accountList[i].balance += cash;
+            } else {
+                return "404 - account not found";
+            }
+        }
+    }
 };
 
+
+console.log(getNameAndBalance(accounts, 1));
 console.log(transferAmount(accounts, 43546731, 23456311, 500.0));
 
-export = {
-  getNameAndBalance,
-  transferAmount,
-  accounts
-}
+// export = {
+//     getNameAndBalance,
+//     transferAmount,
+//     accounts
+// }
