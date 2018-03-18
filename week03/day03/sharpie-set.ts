@@ -47,19 +47,29 @@ class SharpieSet {
         let count: number = 0;
         for (let i: number = 0; i < this.sharpieSet.length; i++) {
             if (this.sharpieSet[i].inkAmount > 0) {
-                count++
+                count++;
             }
         }
         return 'Number of usable Sharpies: ' + count;
     };
 
     removeTrash() {
+        let countTrash: number = 0;
         for (let i: number = 0; i < this.sharpieSet.length; i++) {
             if (this.sharpieSet[i].inkAmount === 0) {
-                this.sharpieSet.splice(i, 1);
+                countTrash++;
             }
         }
-    }
+        this.sharpieSet.sort(function (a, b) {
+            return b.inkAmount - a.inkAmount;
+        })
+        for (let i: number = 0; i < this.sharpieSet.length; i++) {
+            if (this.sharpieSet[i].inkAmount === 0) {
+                this.sharpieSet.splice(i, countTrash);
+                return this.sharpieSet;
+            }
+        }
+    };
 }
 
 let set = new SharpieSet();
