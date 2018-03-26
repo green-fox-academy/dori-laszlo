@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  display: flex;
+  height: 200px;
+}
+
+.green {
+  flex-grow: 1;
+  background-color: #57d226;
+  order: 3;
+}
+
+.yellow {
+  flex-grow: 2;
+  background-color: rgb(254, 213, 65);
+  order: 1;
+}
+
+.purple {
+  flex-grow: 1;
+  background-color: rgb(175, 58, 251);
+  order: 1;
+}
