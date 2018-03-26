@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  height: 280px;
+  width: 100%;
+  background-color: rgb(254, 213, 65);
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0px;
+}
+
+.item {
+  position: relative;
+  background-color: rgb(175, 58, 251);
+  height: 105px;
+  width: 105px;
+}
+
+body {
+  margin: 2px 0px;
+}
