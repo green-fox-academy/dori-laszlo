@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  size: auto;
+}
+
+.green {
+  height: 200px;
+  width: 200px;
+  background-color: #57d226;
+}
+
+.yellow {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(254, 213, 65);
+}
+
+.purple {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(175, 58, 251);
+}
