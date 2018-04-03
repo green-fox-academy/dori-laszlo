@@ -1,6 +1,4 @@
 .main {
-  height: 80px;
-  width: 900px;
   position: relative;
   display: flex;
   margin: 0px auto;
@@ -25,7 +23,7 @@
   width: 900px;
   position: relative;
   display: flex;
-  margin: 20px auto 0px auto;
+  margin: 0px auto;
   align-items: center;
   justify-content: flex-start;
   background-color: rgb(175, 58, 251);
@@ -40,4 +38,8 @@
   color: rgb(59, 234, 253);
   background-color: rgb(59, 234, 253);
   margin: auto 0px auto 15px;
+}
+
+body {
+  margin: 0px;
 }
