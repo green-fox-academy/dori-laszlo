@@ -24,40 +24,28 @@ app.get('/doubling', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is up on port ${PORT}`);
+app.get('/greeter', (req, res) => {
+  if (req.query.name === undefined) {
+    res.json({
+      'error': 'Please provide a name!'
+    })
+  } else if (req.query.title === undefined) {
+    res.json({
+      'error': 'Please provide a title!'
+    })
+  } else {
+    res.json({
+      'welcome_message': `Oh, hi there ${req.query.name}, my dear ${req.query.title}!`
+    });
+  }
 });
 
+app.get('/appenda/:appendable', (req, res) => {
+  res.json({
+    'appended': `${req.params.appendable + 'a'}`
+  })
+});
 
-
-// app.get('/api/hello', (req, res) => {
-//   console.log(req.query);
-//   const name = req.query.name || 'Guest';
-//   res.json({
-//     message: `Hello ${name}!`,
-//   });
-// });
-
-
-// app.get('/api/mentors/:mentorId', (req, res) => {
-//   const mentor = mentors[req.params.mentorId - 1];
-
-//   if(mentor === undefined) {
-//     res.status(404);
-//     res.json({
-//       message: `No mentor with id ${req.params.mentorId}`
-//     })
-//   } else {
-//     res.json(mentor);
-//   }
-// });
-
-
-// app.get('/api/hello', (req, res) => {
-//   console.log(req.query);
-//   const name = req.query.name || 'Guest';
-//   res.json({
-//     message: `Hello ${name}!`,
-//   });
-// });
-
+app.listen(PORT, () => {
+    console.log(`Server is up on port ${PORT}`);
+  });
