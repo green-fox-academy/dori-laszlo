@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/assets', express.static('assets'));
+
 app.use(bodyParser.json());
 
 app.get('/doubling', (req, res) => {
@@ -46,6 +47,38 @@ app.get('/appenda/:appendable', (req, res) => {
   })
 });
 
+app.post('/dountil/:what', (req, res) => {
+  let number = req.body.until;
+  const what = req.params.what;
+  if (req.body.until === undefined) {
+    res.json({
+      error: 'Please provide a number!'
+    })
+  } else if (what === 'sum') {
+    function addNum(number) {
+      if (number > 0) {
+        return number + addNum(number - 1);
+      } else {
+        return 0;
+      }
+    };
+    res.json({
+      result: addNum(number)
+    })
+  } else if (what === 'factor') {
+    function factorio(number) {
+      let calculateFactorial = 1;
+      for (let i = 1; i <= number; i++) {
+        calculateFactorial = (calculateFactorial * i);
+      }
+      return calculateFactorial;
+    };
+    res.json({
+      result: factorio(number)
+    })
+  }
+});
+
 app.listen(PORT, () => {
-    console.log(`Server is up on port ${PORT}`);
-  });
+  console.log(`Server is up on port ${PORT}`);
+});
