@@ -24,6 +24,11 @@ p {
   margin-right: 6px;
 }
 
+.button:disabled:hover {
+  background: none;
+  color: rgb(109, 109, 109);
+}
+
 .button:hover {
   background-color: rgb(46, 49, 56);
   color: white;

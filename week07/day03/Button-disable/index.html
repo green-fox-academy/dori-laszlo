@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <form>
+      <p>What is your favourite pet?</p>
+      <div>
+        <input type="radio" id="favourite1" name="animal" value="Dog">
+        <label for="favourite1">Dog</label>
+        <br>
+
+        <input type="radio" id="favourite2" name="animal" value="Cat">
+        <label for="favourite2">Cat</label>
+        <br>
+
+        <input type="radio" id="favourite3" name="animal" value="Victor the goldfish">
+        <label for="favourite3">Victor the goldfish</label>
+        <br>
+      </div>
+      <p>Do you want to sign up for cat facts?
+        <div>
+          <input type="radio" id="catfact1" name="signup" value="Yes">
+          <label for="yes">Yes</label>
+          <br>
+
+          <input type="radio" id="catfact2" name="signup" value="No">
+          <label for="no">No</label>
+        </div>
+      </p>
+      <div>
+        <button class="button cat" type="submit" disabled>I love cats</button>
+        <button class="button sign" type="submit" disabled>Sign up</button>
+      </div>
+    </form>
+  </main>
+  <script>
+    'use strict';
+
+    const realAnimals1 = document.querySelector('#favourite1');
+    const realAnimals2 = document.querySelector('#favourite2');
+    const fish = document.querySelector('#favourite3');
+    const catFactY = document.querySelector('#catfact1');
+    const catFactN = document.querySelector('#catfact2');
+
+    realAnimals1.addEventListener('click', signButtonEnabler);
+    realAnimals2.addEventListener('click', signButtonEnabler);
+    fish.addEventListener('click', signButtonDisabler);
+    catFactY.addEventListener('click', catButtonEnabler);
+    catFactN.addEventListener('click', catButtonDisabler);
+
+    const button1 = document.querySelector('.sign');
+    const button2 = document.querySelector('.cat');
+
+    function signButtonEnabler() {
+      button1.disabled = false;
+    };
+
+    function signButtonDisabler() {
+      button1.disabled = true;
+    }
+
+    function catButtonEnabler() {
+      button2.disabled = false;
+    }
+
+    function catButtonDisabler() {
+      button2.disabled = true;
+    }
+
+    function catsAlert() {
+      window.alert(`Thank you, you've successfully signed up for cat facts`);
+    }
+
+    button2.addEventListener('click', catsAlert);
+
+  </script>
+</body>
