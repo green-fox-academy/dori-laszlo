@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <wrapper class="wrapper">
+      <form method="GET" action="processed.html">
+        <h1>Account login</h1>
+        <a>Username</a>
+        <input class="username" type="email">
+        <br>
+        <a>Password</a>
+        <input type="password">
+        <a class="forgot" href="https://www.greenfox.com">Forgot password?</a>
+        <br>
+        <button type="submit">Login</button>
+      </form>
+    </wrapper>
+  </main>
+  <script>
+    'use strict';
+
+    document.querySelector('input[type="submit"]')
+      .addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        console.log(submitted);
+      })
+  </script>
+</body>

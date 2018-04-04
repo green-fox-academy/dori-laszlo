@@ -1,0 +1,84 @@
+body {
+  background: linear-gradient(to bottom, rgba(245,245,245,1) 0%, rgba(226,226,226,1) 100%);
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  background-image: url(https://static1.squarespace.com/static/55cb8c58e4b091def9805570/t/587516b0bebafba6daf218a2/1484068530015/o-HIPSTER-OFFICE-facebook.jpg?format=1500w);
+}
+
+main {
+  display: flex;
+  align-content: center;
+  background-color: white;
+  margin: 0 auto;
+  padding: 30 0;
+  width: 30%;
+}
+
+.wrapper {
+  margin: 30px auto ;
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: rgb(59, 59, 59);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+a {
+  color: rgb(59, 59, 59);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+input {
+  min-height: 30px;
+  width: 100%;
+  margin: 7px 0 3px 0;
+  border-radius: 3px;
+  border: 1px solid rgb(230, 230, 230);
+  padding: 0 3px;
+}
+
+input:focus {
+  border: 2px solid rgb(137, 95, 172);
+  outline: none;
+}
+
+.username {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: rgb(9, 9, 9);
+  color: whitesmoke;
+  font-size: 12px;
+  margin: 30px 0 0 0;
+  padding: 10px;
+  border-radius: 20px;
+  width: 90px;
+}
+
+button:focus {
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  border: 2px solid rgb(137, 95, 172);
+}
+
+.forgot {
+  font-size: 10px;
+  text-transform: none;
+  text-decoration: none;
+  align-self: flex-end;
+  display: block;
+  text-align: right;
+}
