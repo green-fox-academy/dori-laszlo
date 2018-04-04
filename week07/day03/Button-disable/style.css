@@ -1,0 +1,39 @@
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+  padding: 30px;
+  border: solid 1px rgb(201, 198, 198);
+}
+
+p {
+  font-size: 24px;
+  color: rgb(54, 54, 54);
+  margin-top: 80px;
+}
+
+.button {
+  font-size: 18px;
+  border-radius: 20px;
+  padding: 8px 20px;
+  margin-right: 6px;
+}
+
+.button:hover {
+  background-color: rgb(46, 49, 56);
+  color: white;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+label {
+  color: grey;
+  font-weight: 300;
+}
