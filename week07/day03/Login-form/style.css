@@ -9,7 +9,7 @@ body {
 main {
   display: flex;
   align-content: center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.733);
   margin: 0 auto;
   padding: 30 0;
   width: 30%;
@@ -71,7 +71,8 @@ button:focus {
 }
 
 button:hover {
-  border: 2px solid rgb(137, 95, 172);
+  background-color: rgba(255, 255, 255, 0.164);
+  color: rgb(184, 167, 202);
 }
 
 .forgot {
