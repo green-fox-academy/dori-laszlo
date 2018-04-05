@@ -9,7 +9,8 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
   // render `home.ejs`
   res.render('home', {
-    title: 'Hello World',
+    title: 'Dóri',
+    image: 'http://m.blog.hu/sa/sasfeszek/image/bartos9.jpg',
   });
 });
 
