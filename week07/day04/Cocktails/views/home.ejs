@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>Cocktails</title>
+</head>
+
+<body>
+  <header>
+    <h1>Cocktails</h1>
+    <ul>
+      <li>
+        <a href="/">all</a>
+      </li>
+      <% alcohols.forEach(function(item) { %>
+        <li>
+          <a href="/?alcohol=<%= item %>">
+            <%= item %>
+          </a>
+        </li>
+        <% }) %>
+    </ul>
+  </header>
+  <table>
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% cocktails.forEach(function(item) { %>
+          <td>
+              <h2>
+                <%= item.name %>
+              </h2>
+              <div class="non-alcoholic">
+                <% if (item.isAlcoholic === false) { %>
+                  <%= '(non-alcoholic)' %>
+                    <% } %>
+              </div>
+            <div class="ingredients">
+              <% let ingredients = [];
+              item.contains.forEach(function(ingredient) {
+                ingredients.push(' ' + ingredient);
+              }); %>
+                <%= ingredients.join(',') %>
+            </div>
+          </td>
+          <td>
+            <h2>
+              <%= item.price + ' ' + 'Ft' %>
+            </h2>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+
+</html>
