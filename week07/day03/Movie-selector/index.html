@@ -10,14 +10,53 @@
 <body>
   <main class="main">
     <h1>Movie selector</h1>
-    <button type="submit">Select a genre</button>
-    <button type="submit">Select a movie</button>
-    <div>The selected movie is: </div>
+    <select name="genre" id="selectGenre">
+      <option value="Select a genre" selected disabled>Select a genre</option>
+      <option value="Sci-fi">Sci-fi</option>
+      <option value="Drama">Drama</option>
+      <option value="Comedy">Comedy</option>
+    </select>
+    <select name="film" id="selectMovie">
+      <option value="Sci-fi" selected disabled>Select a film</option>
+      <option value="Moon" class="Drama" disabled>Moon</option>
+      <option value="2001 Space odessy" class="Sci-fi" disabled>2001 Space odessy</option>
+      <option value="Contact" class="Drama" disabled>Contact</option>
+      <option value="Darkest hour" class="Drama" disabled>Darkest hour</option>
+      <option value="There will be blood" class="Comedy" disabled>There will be blood</option>
+      <option value="Airplane!" class="Comedy" disabled>Airplane!</option>
+      <option value="Deadpool" class="Sci-fi" disabled>Deadpool</option>
+      <option value="Wayne's World" class="Comedy" disabled>Wayne's World</option>
+    </select>
+    <div class="selected">
+      <p class="bottomText">The selected movie is: </p>
+      <p class="selectedMovie">-</p>
+    </div>
   </main>
 
   <script>
     'use strict';
 
+    const genreSelect = document.querySelector('#selectGenre');
+    const filmsSelect = document.querySelector('#selectMovie');
+    const filmList = filmsSelect.querySelectorAll('option');
+
+    function filterToGenre(e) {
+      for (let i = 0; i < filmList.length; i++) {
+        if (filmList[i].className === e.target.value) {
+          filmList[i].disabled = false;
+        }
+      }
+    };
+
+    genreSelect.addEventListener('change', filterToGenre);
+
+    const selectedMovie = document.body.querySelector('.selectedMovie');
+
+    function showSelectedFilm(e) {
+      selectedMovie.textContent = e.target.value;
+    };
+
+    filmsSelect.addEventListener('change', showSelectedFilm);
 
   </script>
 

@@ -2,11 +2,23 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=272829ff&noise=626262&density=15&opacity=15);
+}
+
 main {
-  background-color: lavender;
-  border-radius: 15px;
-  margin: 0 auto;
+  background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 0%, rgba(209,209,209,1) 42%, rgba(237,237,237,1) 100%);  border-radius: 15px;
+  margin: auto;
   padding: 20px;
   width: 40%;
 }
 
+.selected {
+  display: flex;
+  width: 100%;
+}
+
+p {
+  text-align: center;
+  margin-right: 30px;
+}
