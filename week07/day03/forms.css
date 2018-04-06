@@ -1,0 +1,4 @@
+input:invalid:focus {
+  border: 3px solid tomato;
+  outline: none;
+}

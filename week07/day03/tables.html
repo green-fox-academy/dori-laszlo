@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+
+<head>
+<meta charset='utf-8'>
+<title>Card</title>
+<link rel="stylesheet" href="forms.css" type="text/css">
+</head>
+
+<body>
+  <form method="GET" action="processed.html">
+    <fieldset>
+      <legend>Card details</legend>
+      <input type="text" placeholder="Név">
+      <input type="text" placeholder="Bank">
+      <label>Expiry date:
+        <input type="date">
+      </label>
+      <input type="password" placeholder="123" maxlength="3" minlength="3" pattern="[0-9]{3}">
+      <input type="text" placeholder="Card number">
+      <button type="submit">Pay</button>
+      <button type="submit" value="Pay">
+      <button>Pay</button>
+    </fieldset>
+  </form>
+</body>
+
+</html>
