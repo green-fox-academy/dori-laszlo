@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    <%= title %>
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>SPACE</h1>
+  </header>
+  <main class="main">
+    <div>
+      <% posts.forEach(item => { %>
+          <div class="item-title"><%= item.title %></div>
+          <div class="item-url"><%= item.url %></div>
+      <% }) %>
+    </div>
+  </main>
+</div>
+<script src="/static/script.js"></script>
+</body>
+
+</html>
