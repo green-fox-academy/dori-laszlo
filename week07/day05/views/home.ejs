@@ -15,15 +15,39 @@
     <h1>SPACE</h1>
   </header>
   <main class="main">
-    <div>
-      <% posts.forEach(item => { %>
-          <div class="item-title"><%= item.title %></div>
-          <div class="item-url"><%= item.url %></div>
+    <% posts.forEach(item => { %>
+      <div class="item" id="<%= item.id %>">
+        <h2 class="item__title">
+          <%= item.title %>
+        </h2>
+        <a href="<%= item.url %>" class="item__url">
+          <%= item.url %>
+        </a>
+        <button class="vote-button up js-upvote">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 37.5">
+              <path d="M2 26h26L15 4 2 26zm1.752-1L15 5.966 26.248 25H3.752z" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+          </button>
+          <br>
+        <p class="item__score">
+          <%= item.score %>
+        </p>
+        <br>
+        <button class="vote-button down js-downvote">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 37.5">
+              <path d="M2 26h26L15 4 2 26zm1.752-1L15 5.966 26.248 25H3.752z" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+          </button>
+        <time class="item-date">
+          <%= item.timestamp %>
+        </time>
+        <hr>
+      </div>
       <% }) %>
-    </div>
   </main>
-</div>
-<script src="/static/script.js"></script>
+  <script src="/static/script.js"></script>
 </body>
 
 </html>

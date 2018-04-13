@@ -25,15 +25,15 @@ conn.connect(function(err) {
 // conn.end(
 
 app.get('/', (req, res) => {
-  conn.query('SELECT * FROM posts;', function(err, rows) {
+  conn.query('SELECT * FROM posts;', function(err, posts) {
     if (err) {
       console.log(err.toString());
       res.satus(500).send('Database error');
       return;
     }
-    console.log(rows);
+    console.log(posts);
     res.render('home', {
-      posts: rows,
+      posts: posts,
       title: 'Posts',
     })
   });
@@ -52,33 +52,33 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/posts', function(req, res) {
-  conn.query('SELECT * FROM posts;', function(err, rows) {
+  conn.query('SELECT * FROM posts;', function(err, posts) {
     if (err) {
       console.log(err.toString());
       res.satus(500).send('Database error');
       return;
     }
-    console.log(rows);
+    console.log(posts);
     res.render('home', {
-      posts: rows,
+      posts: posts,
       title: 'Posts',
     })
   });
 });
 
 app.get('/api/posts', function(req, res) {
-  conn.query('SELECT * FROM posts;', function(err, rows) {
+  conn.query('SELECT * FROM posts;', function(err, posts) {
     if (err) {
       console.log(err.toString());
       res.satus(500).send('Database error');
       return;
     }
-    res.json(rows);
+    res.json(posts);
   });
 });
 
 app.post('/posts', (req, res) => {
-  conn.query(`INSERT INTO posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', 1);`, function(err, rows) {
+  conn.query(`INSERT INTO posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', 1);`, function(err, posts) {
     if (err) {
       console.log(err.toString());
       res.status(500).send('Database error');
@@ -86,14 +86,14 @@ app.post('/posts', (req, res) => {
     }
     res.json({
       message: 'OK',
-      id: rows.insertId,
+      id: posts.insertId,
       title: 'Posts',
     });
   });
 });
 
 app.put('/posts/:id/upvote', (req, res) => {
-  conn.query(`UPDATE posts SET score = score + 1 WHERE id = ${req.params.id}`, function(err, rows) {
+  conn.query(`UPDATE posts SET score = score + 1 WHERE id = ${req.params.id}`, function(err, posts) {
     if (err) {
       console.log(err.toString());
       res.status(500).send('Database error');
@@ -107,7 +107,7 @@ app.put('/posts/:id/upvote', (req, res) => {
 });
 
 app.put('/posts/:id/downvote', (req, res) => {
-  conn.query(`UPDATE posts SET score = score - 1 WHERE id = ${req.params.id}`, function(err, rows) {
+  conn.query(`UPDATE posts SET score = score - 1 WHERE id = ${req.params.id}`, function(err, posts) {
     if (err) {
       console.log(err.toString());
       res.status(500).send('Database error');
@@ -121,7 +121,7 @@ app.put('/posts/:id/downvote', (req, res) => {
 });
 
 app.delete('/posts/:id', (req, res) => {
-  conn.query(`DELETE FROM posts WHERE id = ${req.params.id}`, function(err, rows) {
+  conn.query(`DELETE FROM posts WHERE id = ${req.params.id}`, function(err, posts) {
     if (err) {
       console.log(err.toString());
       res.status(500).send('Database error');
