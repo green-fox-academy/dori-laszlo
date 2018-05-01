@@ -5,8 +5,8 @@ let buttonDown = document.querySelectorAll('.js-downvote');
 
 buttonUp.forEach(button => {
   button.addEventListener('click', function (e) {
-    let postId = e.target.parentNode.parentNode.id;
-    let post = e.target.parentNode.parentNode;
+    let postId = e.target.parentNode.parentNode.parentNode.id;
+    let post = e.target.parentNode.parentNode.parentNode;
     console.log(postId)
     console.log(typeof postId)
     xhr.open('PUT', `http://localhost:3000/posts/${postId}/upvote`, true);
@@ -26,8 +26,8 @@ buttonUp.forEach(button => {
 
 buttonDown.forEach(button => {
   button.addEventListener('click', function (e) {
-    let postId = e.target.parentNode.parentNode.id;
-    let post = e.target.parentNode.parentNode;
+    let postId = e.target.parentNode.parentNode.parentNode.id;
+    let post = e.target.parentNode.parentNode.parentNode;
     console.log(postId)
     console.log(typeof postId)
     xhr.open('PUT', `http://localhost:3000/posts/${postId}/downvote`, true);
