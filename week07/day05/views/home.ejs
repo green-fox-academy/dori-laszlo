@@ -11,42 +11,35 @@
 </head>
 
 <body>
-  <header>
-    <h1>SPACE</h1>
+  <header class="header">
+    <h1 class="header__title">SPACE</h1>
   </header>
-  <main class="main">
+  <main class="items">
     <% posts.forEach(item => { %>
-      <div class="item" id="<%= item.id %>">
-        <h2 class="item__title">
-          <%= item.title %>
-        </h2>
-        <a href="<%= item.url %>" class="item__url">
-          <%= item.url %>
-        </a>
-        <button class="vote-button up js-upvote">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 37.5">
-            <path d="M2 26h26L15 4 2 26zm1.752-1L15 5.966 26.248 25H3.752z" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            />
-          </svg>
-        </button>
-        <br>
-        <p class="item__score">
-          <%= item.score %>
-        </p>
-        <br>
-        <button class="vote-button down js-downvote">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 37.5">
-            <path d="M2 26h26L15 4 2 26zm1.752-1L15 5.966 26.248 25H3.752z" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            />
-          </svg>
-        </button>
-        <time class="item-date">
-          <%= item.timestamp %>
-        </time>
+        <article class="item" id="<%= item.id %>">
+            <aside class="item__vote-container">
+                <button class="vote-button up js-upvote">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 37.5">
+                        <path d="M2 26h26L15 4 2 26zm1.752-1L15 5.966 26.248 25H3.752z" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        />
+                    </svg>
+                </button>
+                <p class="item__score"><%= item.score %></p>
+                <button class="vote-button down js-downvote">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 37.5">
+                        <path d="M2 26h26L15 4 2 26zm1.752-1L15 5.966 26.248 25H3.752z" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        />
+                    </svg>
+                </button>
+            </aside>
+            <div class="item__body">
+                <h2 class="item__title"><%= item.title %></h2>
+                <a href="<%= item.url %>" class="item__url"><%= item.url %></a>
+                <time class="item__date"><%= item.timestamp %></time>
+            </div>
+        </article>
         <hr>
-      </div>
       <% }) %>
-        <div class="post-form">
   </main>
   <hr class="bottom-line">
   <div class="create__post">
