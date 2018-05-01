@@ -3,49 +3,76 @@
   padding: 0;
 }
 
-body {
+body,
+html {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=f2f2f2ff&noise=a7a5b3&density=14&opacity=15);
 }
 
 main {
-  margin: 5% 15%;
-  padding: 20px 15%;
-  border-radius: 5px 5px 5px 5px;
-  background-color: white;
+  width: 70%;
+  margin: 0 auto;
 }
 
-header {
-  display: flex;
+.header {
   align-content: center;
-  width: 100%;
-  height: 170px;
   background-image: url(https://viatea.es/wp-content/uploads/2017/02/destacada-captura.jpg);
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 170px;
+  width: 100%;
 }
 
-h1 {
+.header__title {
   color: white;
   letter-spacing: 3rem;
   text-align: center;
   margin: auto;
   font-weight: 100;
-  background: linear-gradient(to right, rgba(219,219,219,0) 0%, rgba(39,39,41,0.83) 35%, rgba(35,35,37,1) 42%, rgba(28,27,30,1) 56%, rgba(24,23,26,0.84) 63%, rgba(237,237,237,0) 100%);
+  background: linear-gradient(to right, rgba(219, 219, 219, 0) 0%, rgba(39, 39, 41, 0.83) 35%, rgba(35, 35, 37, 1) 42%, rgba(28, 27, 30, 1) 56%, rgba(24, 23, 26, 0.84) 63%, rgba(237, 237, 237, 0) 100%);
 }
 
-h2 {
- margin-left: 50px;
+  .items {
+    margin: 1em auto;
+    padding: 1.5em 1em;
+    border-radius: 5px 5px 5px 5px;
+    background-color: white;
+    max-width: 70%;
+  }
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  min-width: 200px;
+  margin: 1em;
+  padding: 1em;
 }
 
-hr {
-  margin: 25px 0;
+.item__body {
+  flex: 1;
+}
+
+.item__title {
+  margin-bottom: 0.4em;
+}
+
+.item__url {
+  margin-bottom: 0.2em;
+  display: block;
+}
+
+.item__vote-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-right: 1em;
 }
 
 .item__score {
-  float: left;
   color: rgb(12, 160, 123);
+  text-align: center;
 }
 
 .vote-button {
@@ -53,13 +80,11 @@ hr {
   min-height: 3em;
   background: transparent;
   border: 0;
-  float: left;
-  margin-right: 20px;
+  cursor: pointer;
 }
 
 .vote-button.down {
   transform: rotateX(180deg);
-
 }
 
 .vote-button svg {
@@ -71,30 +96,28 @@ hr {
   fill: rgb(12, 160, 123);
 }
 
-.create__post {
-  margin: 5% 15%;
-  padding: 20px 15%;
-  border-radius: 5px 5px 5px 5px;
-  background-color: white;
-}
-
 .bottom-line {
   width: 70%;
   margin: 0 auto;
 }
 
+.create__post {
+  width: 70%;
+  margin: 50px auto;
+}
+
 #form-submit-button {
-    background-color:#44c767;
-    -moz-border-radius:28px;
-    -webkit-border-radius:28px;
-    border-radius:28px;
-    border:1px solid #18ab29;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:17px;
-    padding:16px 31px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
+  background-color:rgb(12, 160, 123);
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid rgb(12, 160, 123);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
 }
