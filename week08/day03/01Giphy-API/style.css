@@ -1,4 +1,15 @@
 .gif {
-  height: 100px;
-  margin: 20px;
+  width: 100vw;
+}
+
+.gif * + * {
+  margin-left: 4px;
+}
+
+.gif img {
+  height: 150px;
+}
+
+h1 {
+  font-size: 2vw;
 }
