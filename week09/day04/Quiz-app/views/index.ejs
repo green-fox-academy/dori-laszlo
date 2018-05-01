@@ -11,6 +11,19 @@
 
 <body>
   <h1>Quizz app</h1>
+  <p id="score">SCORE:
+    <span id="score_value">0</span>
+  </p>
+  <h1 id="questionText">
+    <%= question %>
+  </h1>
+  <div class="container">
+    <% answers.forEach(answer => { %>
+      <button class="answers" id="<%= answer.is_correct %>">
+        <%= answer.answer %>
+      </button>
+      <% }) %>
+  </div>
   <script src="/static/script.js"></script>
 </body>
 
